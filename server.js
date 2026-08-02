@@ -13,7 +13,7 @@ const mysql = require('mysql2');
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'campus_user',
-    password: '你的密码',  // 替换成你设置的密码
+    password: '123456789',  // 替换成你设置的密码
     database: 'campus_db',
     waitForConnections: true,
     connectionLimit: 10,
@@ -51,7 +51,7 @@ app.get('/recommend', (req, res) => {
         const shuffled = merged.sort(() => Math.random() - 0.5);
         
         // 5. 取前10条
-        const result = shuffled.slice(0, 10);
+        const result = shuffled;
         
         res.json({ code: 0, data: result });
     } catch (error) {
